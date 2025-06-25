@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.route');
 const projectRoutes = require('./routes/project.route');
@@ -14,6 +15,8 @@ app.use(express.json());
 
 app.set('views', path.join(__dirname, 'public'));
 app.set('view engine', 'html');
+
+app.use(cookieParser());
 
 
 
